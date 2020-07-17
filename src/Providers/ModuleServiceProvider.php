@@ -160,6 +160,7 @@ class ModuleServiceProvider extends RouteServiceProvider{
             ->first();
 	}
 
+
     /**
      * Override the map() function of Illuminate\Foundation\Support\Providers\RouteServiceProvider
      * it will be call by loadRoutes() function
