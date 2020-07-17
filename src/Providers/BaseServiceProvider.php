@@ -4,7 +4,7 @@ namespace Izi\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class BaseServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
