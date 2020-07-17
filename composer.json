@@ -1,0 +1,47 @@
+{
+	"name" : "izisoft/laravel",
+	"description" : "Laravel Application by Izisoft",
+	"keywords" : [
+		"laravel",
+		"framework",
+		"izisoft",
+		"iziweb",
+		"iziframework",
+		"A Tỉn"
+	],
+	"homepage" : "https://iziweb.vn",
+	"type" : "library",
+	"license" : "BSD-3-Clause",
+	"authors" : [{
+			"name" : "A Tỉn",
+			"email" : "zinzinx8@gmail.com",
+			"homepage" : "https://iziweb.vn",
+			"role" : "Founder and project lead"
+		}, {
+			"name" : "A Tủn",
+			"email" : "vantruong1898@gmail.com",
+			"homepage" : "https://helloweb.vn",
+			"role" : "Core framework development"
+		}
+	],
+	"support" : {
+		"issues" : "https://github.com/izisoft/laravel/issues?state=open",
+		"forum" : "https://github.com/izisoft/laravel/forum/",
+		"wiki" : "https://github.com/izisoft/laravel/wiki/",
+		"source" : "https://github.com/izisoft/laravel",
+		"email" : "zinzinx8@gmail.com"
+	},
+	"require" : {
+		"php" : ">=7.2.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Izi\\" : "src"
+		}
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "2.0.x-dev"
+		}
+	}
+}
