@@ -239,20 +239,20 @@ class ModuleServiceProvider extends RouteServiceProvider{
     * @return void
     */
     protected function mapApi(array $mod){
-        $route_dir = implode(DIRECTORY_SEPARATOR, [__DIR__, $mod['folder'], 'Routes']);
+        $route_dir = implode(DIRECTORY_SEPARATOR, [base_path('app\Modules'), $mod['folder'], 'Routes']);
         $entries = scandir($route_dir);
         foreach($entries as $f){
             if($f == '.' || $f == '..')
                 continue;
             
-            $route_file = implode(DIRECTORY_SEPARATOR, [__DIR__, $mod['folder'], 'Routes', $f]);
+            $route_file = implode(DIRECTORY_SEPARATOR, [base_path('app\Modules'), $mod['folder'], 'Routes', $f]);
             $b = explode('.', $f);
             
             $middleware = [];
             if(is_array($mod['group_middleware']) && !empty($mod['group_middleware'])){
                 $middleware = array_merge($middleware, $mod['group_middleware']);
             }
-
+echo $mod['prefix_url'] . '/' . $b[0];
             Route::prefix($mod['prefix_url'] . '/' . $b[0])
                 ->middleware($middleware)
                 ->namespace($this->namespace)
