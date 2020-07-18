@@ -246,16 +246,23 @@ class ModuleServiceProvider extends RouteServiceProvider{
                 continue;
             
             $route_file = implode(DIRECTORY_SEPARATOR, [base_path('app\Modules'), $mod['folder'], 'Routes', $f]);
-            $b = explode('.', $f);
+
+            $version = pathinfo($f, PATHINFO_FILENAME);            
             
             $middleware = [];
             if(is_array($mod['group_middleware']) && !empty($mod['group_middleware'])){
                 $middleware = array_merge($middleware, $mod['group_middleware']);
             }
-echo $mod['prefix_url'] . '/' . $b[0];
-            Route::prefix($mod['prefix_url'] . '/' . $b[0])
+
+            /**
+            * app/v1
+            * app/v2
+            * ...
+            */
+
+            Route::prefix($mod['prefix_url'] . '/' . $version)
                 ->middleware($middleware)
-                ->namespace($this->namespace)
+                ->namespace($this->namespace . '\\' . $version)
                 ->group($route_file);
         }
     }
